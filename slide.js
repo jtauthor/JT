@@ -7,24 +7,24 @@
  
 window.JT=(function(){if(window.$){var o={}; o.extend=$.extend; return o;}return false;})();
 
-//如果选择依赖库，这个函数则可以注释或剔除掉。  
+//如果选择依赖库，这个函数则可以注释或剔除掉。	
 window.JT=window.JT||(function(){	
 	var JT = function(dom){if(!dom) {return this;} this.length=0;if(dom.length){for(var i=0;i<dom.length;i++){this[this.length++]=dom[i]}}else{this[this.length++]=dom}return this}
 	var _$ = function(dom){return new JT(dom);}
 	
 	_$.fn=JT.prototype = { 
-			forEach		: [].forEach,
-			eq 			: function(i){var _this=this,slice=function(){return _$([].slice.apply(_this,arguments))};return i===-1?slice(i):slice(i,+i+1)},			
-			find		: function(str){function unique(arr){for(var i=0;i<arr.length;i++){if(arr.indexOf(arr[i])!=i){arr.splice(i,1);i--}}return arr}if(this.length===0){return undefined}var elems=[],tmpElems;for(var i=0;i<this.length;i++){tmpElems=this[i].querySelectorAll(str);for(var j=0;j<tmpElems.length;j++){elems.push(tmpElems[j])}}return _$(unique(elems))}, 
-			each		: function(callback){this.forEach(function(el,idx){callback.call(el,idx,el)});return this},		
-			addClass	: function(name){this.each(function(){this.classList.add(name);});return this;},
-			removeClass	: function(name){this.each(function(){this.classList.remove(name);});return this;},
-			css			: function(attribute, value, obj){var toAct=obj!=undefined?obj:this[0];if(this.length===0)return undefined;if(value==undefined&&typeof(attribute)==="string"){var styles=window.getComputedStyle(toAct);return toAct.style[attribute]?toAct.style[attribute]:window.getComputedStyle(toAct)[attribute]}for(var i=0;i<this.length;i++){if(typeof attribute==="object"){for(var j in attribute){this[i].style[j]=attribute[j]}}else{this[i].style[attribute]=value}}return this},			
-			bind		: function(type, fn){this.each(function(){this.addEventListener(type, fn, false);}); return this;}, 
-			unbind		: function(type, fn){this.each(function(){this.removeEventListener(type, fn, false);}); return this;}, 
-			append		: function(node){node=node.nodeType==1?node:node[0];this[0].appendChild(node);return this;},
-			prepend		: function(node){node=node.nodeType==1?node:node[0];node=node.cloneNode(true);this[0].insertBefore(node, this[0].firstChild);return this;},
-			clone		: function(deep){var node=this[0].cloneNode(true); return _$(node);}
+		forEach		: [].forEach,
+		eq 			: function(i){var _this=this,slice=function(){return _$([].slice.apply(_this,arguments))};return i===-1?slice(i):slice(i,+i+1)},			
+		find		: function(str){function unique(arr){for(var i=0;i<arr.length;i++){if(arr.indexOf(arr[i])!=i){arr.splice(i,1);i--}}return arr}if(this.length===0){return undefined}var elems=[],tmpElems;for(var i=0;i<this.length;i++){tmpElems=this[i].querySelectorAll(str);for(var j=0;j<tmpElems.length;j++){elems.push(tmpElems[j])}}return _$(unique(elems))}, 
+		each		: function(callback){this.forEach(function(el,idx){callback.call(el,idx,el)});return this},		
+		addClass	: function(name){this.each(function(){this.classList.add(name);});return this;},
+		removeClass	: function(name){this.each(function(){this.classList.remove(name);});return this;},
+		css			: function(attribute, value, obj){var toAct=obj!=undefined?obj:this[0];if(this.length===0)return undefined;if(value==undefined&&typeof(attribute)==="string"){var styles=window.getComputedStyle(toAct);return toAct.style[attribute]?toAct.style[attribute]:window.getComputedStyle(toAct)[attribute]}for(var i=0;i<this.length;i++){if(typeof attribute==="object"){for(var j in attribute){this[i].style[j]=attribute[j]}}else{this[i].style[attribute]=value}}return this},			
+		bind		: function(type, fn){this.each(function(){this.addEventListener(type, fn, false);}); return this;}, 
+		unbind		: function(type, fn){this.each(function(){this.removeEventListener(type, fn, false);}); return this;}, 
+		append		: function(node){node=node.nodeType==1?node:node[0];this[0].appendChild(node);return this;},
+		prepend		: function(node){node=node.nodeType==1?node:node[0];node=node.cloneNode(true);this[0].insertBefore(node, this[0].firstChild);return this;},
+		clone		: function(deep){var node=this[0].cloneNode(true); return _$(node);}
 	};
 
 	_$.extend = function(target){if(target==undefined)target=this;if(arguments.length===1){for(var key in target)this[key]=target[key];return this}else{slice.call(arguments,1).forEach(function(source){for(var key in source)target[key]=source[key]})}return target};	
