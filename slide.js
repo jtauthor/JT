@@ -1,5 +1,4 @@
 
-
 /************************************************************************************************************ 
  **********************************      JavaScript Tools(by wangfz)      *********************************** 
  ************************************************************************************************************/
@@ -14,7 +13,7 @@ window.JT=window.JT||(function(){
 	
 	_$.fn=JT.prototype = { 
 		forEach		: [].forEach,
-		eq 			: function(i){var _this=this,slice=function(){return _$([].slice.apply(_this,arguments))};return i===-1?slice(i):slice(i,+i+1)},			
+		eq 		: function(i){var _this=this,slice=function(){return _$([].slice.apply(_this,arguments))};return i===-1?slice(i):slice(i,+i+1)},			
 		find		: function(str){function unique(arr){for(var i=0;i<arr.length;i++){if(arr.indexOf(arr[i])!=i){arr.splice(i,1);i--}}return arr}if(this.length===0){return undefined}var elems=[],tmpElems;for(var i=0;i<this.length;i++){tmpElems=this[i].querySelectorAll(str);for(var j=0;j<tmpElems.length;j++){elems.push(tmpElems[j])}}return _$(unique(elems))}, 
 		each		: function(callback){this.forEach(function(el,idx){callback.call(el,idx,el)});return this},		
 		addClass	: function(name){this.each(function(){this.classList.add(name);});return this;},
