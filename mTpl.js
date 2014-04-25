@@ -46,7 +46,7 @@
 			isCache 	= isCache != undefined ? isCache : true,
 			valueArr	= [], 			
 			fn 			= function(){},	
-			htmlEncode 	= function(s){ return s;
+			htmlEncode 	= function(s){
 				return s
 					.replace(/&/g,'&amp;')
 					.replace(/>/g,'&gt;')
