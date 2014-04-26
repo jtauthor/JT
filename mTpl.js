@@ -21,6 +21,7 @@
 /**
  * 极速微模板解析引擎mTpl v1.0: 
  * @author: fengzhen wang
+ * call method: mTpl(str, data, startSelector, endSelector, isCache);
  * @param {String}  模板id || 模板text
  * @param {Object}  数据源json 
  * @param {String}  可选 要匹配的开始选择符 '<%' 、'[%' 、'<#' ..., 默认为'<%'
