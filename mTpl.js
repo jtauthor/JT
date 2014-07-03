@@ -61,13 +61,7 @@
 					";\n var s='';\n s+='" + strFormatTpl + "';\n return s");
 			},			
 			resetChar 	= function(c, str){
-				var a=c, f=function(s){ 
-					if(str.indexOf(s) >-1){
-						return f(s+a);
-					}
-					return s;
-				};				
-				return f(a);
+				return 'mTpl_' + c + '_mTpl';
 			},
 			recoverChar = function(s){
 				return s
