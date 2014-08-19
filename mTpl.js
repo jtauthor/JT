@@ -60,8 +60,8 @@
 					"var mTpl_htmlEncode="+ htmlEncode.toString() + 
 					";\n var s='';\n s+='" + strFormatTpl + "';\n return s");
 			},			
-			resetChar 	= function(c, str){
-				return 'mTpl_' + c + '_mTpl';
+			resetChar 	= function(s){
+				return 'mTpl_' + s + '_mTpl';
 			},
 			recoverChar = function(s){
 				return s
